@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Premium Store - e-commerce moderno com catálogo, carrinho, autenticação e painel administrativo." />
+    <meta name="theme-color" content="#0f0f11" />
+    <title>Premium Store | Elegância e tecnologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="#" class="brand" aria-label="Premium Store">Premium Store</a>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#catalog">Catálogo</a>
+          <a href="#favorites">Carrinho</a>
+          <a href="#admin">Admin</a>
+          <a href="#login" class="btn btn-dark" id="authLink">Entrar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">E-commerce premium</p>
+          <h1>Elegância, tecnologia e excelência em cada compra.</h1>
+          <p>Uma experiência sofisticada para catálogo, autenticação, carrinho e painel administrativo.</p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-gold">Ver catálogo</a>
+            <a href="#login" class="btn btn-outline">Criar conta</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="catalog">
+        <div class="container">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Produtos</p>
+              <h2>Novidades em destaque</h2>
+            </div>
+            <div class="tools">
+              <input id="search" placeholder="Buscar produto" aria-label="Buscar produto" />
+              <select id="categoryFilter" aria-label="Filtrar por categoria">
+                <option value="all">Todas</option>
+              </select>
+            </div>
+          </div>
+          <div id="productGrid" class="product-grid"></div>
+        </div>
+      </section>
+
+      <section class="section auth-panel" id="login">
+        <div class="container grid-2">
+          <form id="loginForm" class="card form-card">
+            <h3>Entrar</h3>
+            <input name="email" type="email" placeholder="E-mail" required />
+            <input name="password" type="password" placeholder="Senha" required />
+            <button class="btn btn-gold" type="submit">Entrar</button>
+            <p id="loginMessage" class="form-message"></p>
+          </form>
+
+          <form id="registerForm" class="card form-card">
+            <h3>Criar conta</h3>
+            <input name="name" placeholder="Nome" required />
+            <input name="email" type="email" placeholder="E-mail" required />
+            <input name="password" type="password" placeholder="Senha" required />
+            <button class="btn btn-dark" type="submit">Cadastrar</button>
+            <p id="registerMessage" class="form-message"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="favorites">
+        <div class="container">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Carrinho</p>
+              <h2>Seu pedido e histórico</h2>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div id="cartPanel" class="card panel-card"></div>
+            <div id="ordersPanel" class="card panel-card"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="admin">
+        <div class="container">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Admin</p>
+              <h2>Painel administrativo</h2>
+            </div>
+          </div>
+          <form id="productForm" class="card admin-form">
+            <input name="name" placeholder="Nome do produto" required />
+            <input name="description" placeholder="Descrição" required />
+            <input name="category" placeholder="Categoria" required />
+            <input name="price" type="number" step="0.01" placeholder="Preço" required />
+            <input name="stock" type="number" placeholder="Estoque" required />
+            <input name="image" type="file" />
+            <button class="btn btn-gold" type="submit">Salvar produto</button>
+            <p id="productMessage" class="form-message"></p>
+          </form>
+          <div id="adminProducts" class="product-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <button class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
